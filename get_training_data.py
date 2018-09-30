@@ -1,33 +1,12 @@
 from vizdoom import *
 import random, time
-import torch
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
-import cv2
+
 
 # left   239.97654724121094
 # right -175.97657775878906
-"""
-def draw_bounding_box(buffer, x, y, width, height, color):
-        for i in range(width):
-            buffer[y, x + i, :] = color
-            buffer[y + height, x + i, :] = color
-
-        for i in range(height):
-            buffer[y + i, x, :] = color
-            buffer[y + i, x + width, :] = color
-    screen = game.get_state().screen_buffer
-        for l in game.get_state().labels:
-                    if l.object_name in ["Medkit", "GreenArmor"]:
-                        draw_bounding_box(screen, l.x, l.y, l.width, l.height, doom_blue_color)
-                    else:
-                        draw_bounding_box(screen, l.x, l.y, l.width, l.height, doom_red_color)
-        time.sleep(2)
-
-doom_red_color = [0, 0, 203]
-doom_blue_color = [203, 0, 0]  
-"""
 
 def main():
     training_data_answer = np.zeros([movement_count,pic_per_episode_count],dtype= np.uint8)
@@ -88,15 +67,3 @@ if __name__ == '__main__':
     pic_per_episode_count = 20
 
     main()
-
-
-"""
-
-        print(POSITION_X)
-        print(game.get_screen_format())
-       
-        print("Label:", l.value, "object id:", l.object_id, "object name:", l.object_name)
-        print("Object position x:", l.object_position_x, "y:", l.object_position_y, "z:", l.object_position_z)
-        """
-        #labels = game.get_state().labels_buffer
-
